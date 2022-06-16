@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 /**
  * _exec - execve implementation for Simple Shell.
  * @command: Command to execute.
@@ -9,10 +9,11 @@
  */
 int _exec(char *command, char **cmd, char **env)
 {
+
 	/* (void)cmd; */
 	if (execve(command, cmd, env) == -1)
 	{
-		perror("Error");
+		perror("Error:");
 	}
 	return (0);
 }
